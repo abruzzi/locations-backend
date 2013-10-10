@@ -1,0 +1,23 @@
+{
+  "name": "listing",
+  "version": "0.0.0",
+  "authors": [
+    "Qiu Juntao <juntao.qiu@gmail.com>"
+  ],
+  "main": "src/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "description": "listing SPA",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.2",
+    "director": "~1.2.0"
+  }
+}
