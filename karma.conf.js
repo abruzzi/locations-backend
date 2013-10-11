@@ -10,9 +10,10 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  { pattern: 'test/fixtures/**/*.html', included: false, served: true },
   'bower_components/jquery/jquery.js',
   'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-  { pattern: 'test/fixtures/**/*.html', included: false, served: true },
+  'src/helper.js,
   'src/**/*.js',
   'test/**/*spec.js'
 ];

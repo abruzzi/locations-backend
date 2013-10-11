@@ -1,18 +1,12 @@
-jasmine.getFixtures().fixturesPath = "base";
-
 describe("listing application", function() {
-    beforeEach(function() {
-        loadFixtures("test/fixtures/index.html");
-    });
     it("should send query from location when I click the search button", function() {
-        var location = $("#location");
-        var search = $("#search");
+        var text = "Melbourne";
 
-        location.val("Melborune");
-        search.click();
+        $("#location").val(text);
+        $("#search").trigger("click");
         
-        var content = $("#content");
+        var content = $("#content").html().trim();
 
-        expect(content.html().trim()).toContainHtml("Melborune"); 
+        expect(content).toContain(text);
     });
 });
