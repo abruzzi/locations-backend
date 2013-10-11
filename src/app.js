@@ -4,6 +4,22 @@ $(function() {
 
     $("#search").on("click", function() {
         var text = loc.val();
-        content.html(text);
+
+        $.ajax({
+            url: '/locations.json',
+            dataType: 'json',
+            data: {"location": text},
+            success: function(locations) {
+                var content = $("#content ul");
+                for(var loc in locations) {
+                    var li = $("<li/>").html(locations[loc].name);
+                    li.appendTo(content);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("err: " + error); 
+            }
+        });
     });
 });
+

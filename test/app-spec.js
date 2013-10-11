@@ -1,12 +1,19 @@
 describe("listing application", function() {
-    it("should send query from location when I click the search button", function() {
-        var text = "Melbourne";
 
-        $("#location").val(text);
+    beforeEach(function() {
+        $("#content ul").empty(); 
+    });
+
+    it("should get all locations when I just click the search button", function() {
         $("#search").trigger("click");
         
-        var content = $("#content").html().trim();
+        waitsFor(function() {
+            return $("#content ul").find("li").length > 0;
+        }, 2000);
 
-        expect(content).toContain(text);
+        runs(function() {
+            expect($("#content ul").find("li").length).not.toEqual(0);
+        });
     });
+
 });

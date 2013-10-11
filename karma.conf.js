@@ -11,13 +11,17 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   { pattern: 'test/fixtures/**/*.html', included: false, served: true },
+  { pattern: '*.json', included: false, served: true },
   'bower_components/jquery/jquery.js',
   'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-  'src/helper.js,
+  'src/helper.js',
   'src/**/*.js',
   'test/**/*spec.js'
 ];
 
+proxies= {
+    '/': 'http://localhost:8000/'
+}
 
 // list of files to exclude
 exclude = [
