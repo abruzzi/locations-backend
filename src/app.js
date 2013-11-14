@@ -13,7 +13,6 @@ $(function() {
     var searchResults = $("#searchResults ul");
     var liked = $("#likedPlaces ul");
 
-
     $("#searchButton").on("click", function() {
         var location = $.trim(loc.val());
 
@@ -31,7 +30,7 @@ $(function() {
                 });
             },
             error: function(xhr, status, error) {
-                console.log("err: " + error); 
+                console.log("err: " + error);
             }
         });
     });
@@ -43,4 +42,3 @@ $(function() {
     });
 
 });
-

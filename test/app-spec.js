@@ -1,19 +1,17 @@
-describe("listing application", function() {
+describe("search location", function() {
 
-    beforeEach(function() {
-        $("#content ul").empty(); 
-    });
+    it("should return locations based on the search critria", function() {
+        $("#locationInput").val("Melbourne");
+        $("#searchButton").click();
 
-    it("should get all locations when I just click the search button", function() {
-        $("#search").trigger("click");
-        
         waitsFor(function() {
-            return $("#content ul").find("li").length > 0;
+            return $("#searchResults ul li").length > 0; 
         }, 2000);
 
         runs(function() {
-            expect($("#content ul").find("li").length).not.toEqual(0);
+            expect($("#searchResults ul li").length).toEqual(4);
+            expect($("#likedPlaces ul li").length).toEqual(0);
         });
     });
-
 });
+

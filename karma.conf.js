@@ -19,10 +19,6 @@ files = [
   'test/**/*spec.js'
 ];
 
-proxies= {
-    '/': 'http://localhost:8000/'
-}
-
 // list of files to exclude
 exclude = [
   

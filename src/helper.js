@@ -1,4 +1,4 @@
-jasmine.getFixtures().fixturesPath = "base/test/fixtures/";
+jasmine.getFixtures().fixturesPath = "test/fixtures/";
 
 var fixtures = [
     "index.html"
