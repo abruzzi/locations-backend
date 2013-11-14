@@ -21,5 +21,9 @@ class Locations < Sinatra::Base
     get '/' do
         File.open('index.html')
     end
+
+    get '/test' do
+        File.open('SpecRunner.html')
+    end
 end
 
