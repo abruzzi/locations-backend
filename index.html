@@ -2,35 +2,76 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="css/style.css">
-        <script src="bower_components/jquery/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="bower_components/foundation/css/normalize.css" title="" type="" />
+        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" title="" type="" />
+        <script src="bower_components/jquery/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
         <script src="bower_components/underscore/underscore.js" type="text/javascript" charset="utf-8"></script>
-        <!-- <script src="src/app.js" type="text/javascript" charset="utf-8"></script> -->
+        <!--
+        <script src="src/app.js" type="text/javascript" charset="utf-8"></script>
+       -->
+        <script src="bower_components/foundation/js/vendor/modernizr.js" type="text/javascript" charset="utf-8"></script>
+        <script src="bower_components/foundation/js/foundation.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="src/like.js" type="text/javascript" charset="utf-8"></script>
         <script src="src/search-form.js" type="text/javascript" charset="utf-8"></script>
         <script src="src/search-result.js" type="text/javascript" charset="utf-8"></script>
         <script src="src/search.js" type="text/javascript" charset="utf-8"></script>
         <script src="src/app-rewrite.js" type="text/javascript" charset="utf-8"></script>
+      
+        <style type="text/css" media="screen">
+          .title{
+            background: #FAFAFA;
+            border: 1px solid #ccc;
+          }
+          ul li {
+            list-style: none;
+            padding: 4px 0;
+          }
+        </style>
         <title>Locations</title>
     </head>
-
     <body>
-         <div id="container">
+      <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar>
+          ...
+        </nav>
+      </div>
 
-             <div id="searchForm">
-                 <input type="text" id="locationInput" value="" placeholder="location for search"/>
-                 <input type="button" class="submit" id="searchButton" value="search" />
+         <div id="container" style="margin-top: 40px;">
+             <div class="row">
+                 <div id="searchForm">
+                   <div  class="large-10 columns">
+                     <input type="text" id="locationInput" value="" placeholder="location for search"/>
+                   </div>
+                   <div  class="large-2 columns">
+                       <input type="button" class="submit button tiny" id="searchButton" value="search" />
+                   </div>
+                 </div>
              </div>
 
-             <div id="searchResults">
-                 <h3>Search results:</h3>
-                 <ul />
-             </div>
+            <div class="row">
+              <hr class="large-12 columns" />
+            </div>
 
-             <div id="likedPlaces">
-                 <h3>Places I liked:</h3>
-                 <ul />
-             </div>
+            <div class="row">
+
+              <div id="likedPlaces1"  class="large-3 columns">
+                  <h4>Places I liked:</h4>
+                  <ul />
+              </div>
+
+              <div id="searchResults" class="large-6 columns">
+                  <h4>Search results:</h4>
+                  <ul />
+              </div>
+
+              <div id="likedPlaces2"  class="large-3 columns">
+                  <h4>Places I liked:</h4>
+                  <ul />
+              </div>
+
+            </div>
          </div>
     </body>
 </html>

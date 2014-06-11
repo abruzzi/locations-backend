@@ -2,7 +2,13 @@ describe("search async", function() {
     var search;
 
     beforeEach(function() {
-        search = new Search();    
+        spyOn($, 'ajax').andCallFake(function(e) {
+          return {
+            then: function(){}
+          }
+        });
+
+        search = new Search();
     });
 
     it("should create new search", function() {
@@ -11,8 +17,9 @@ describe("search async", function() {
 
     it("should fetch data from remote", function() {
         var r = search.fetch("Melbourne");
-        expect(r.then).toBeDefined();
-        // expect($.ajax.mostRecentCall.args[0]).toEqual('Mel');
+        expect($.ajax).toHaveBeenCalled();
+        expect($.ajax.mostRecentCall.args[0]).toContain("Melbourne");;
     });
-});
 
+
+});

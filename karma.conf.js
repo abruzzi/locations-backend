@@ -14,16 +14,22 @@ files = [
   { pattern: '*.json', included: false, served: true },
   'bower_components/jquery/jquery.js',
   'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-  'src/helper.js',
+  'bower_components/underscore/underscore.js',
   'src/**/*.js',
   'test/**/*spec.js'
 ];
 
 // list of files to exclude
 exclude = [
-  
+  'src/app.js',
+  'src/helper.js',
+  'test/app-spec.js'
 ];
 
+
+proxies = {
+ '/': 'http://127.0.0.1:9393/'
+};
 
 // test results reporter to use
 // possible values: 'dots', 'progress', 'junit'

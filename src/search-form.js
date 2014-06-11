@@ -1,6 +1,5 @@
 var SearchForm = function(form) {
     this.$element = $(form);
-    console.log(form);
     this.$element.on('click', '.submit', _.bind(this._bindSubmit, this));
 }
 

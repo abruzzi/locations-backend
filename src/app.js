@@ -1,12 +1,12 @@
 var cache = {};
 
-function getTemplate(template) {
+function getTemplate(template) {//{{{
     if(!cache[template]) {
         cache[template] = $.get("templates/" + template);
     }
 
     return cache[template];
-}
+}//}}}
 
 $(function() {
     var loc = $("#locationInput");
@@ -15,10 +15,6 @@ $(function() {
 
     $("#searchButton").on("click", function() {
         var location = $.trim(loc.val());
-
-        if(!location) {
-            return;
-        }
 
         $.ajax({
             url: '/locations/'+location,
@@ -36,9 +32,8 @@ $(function() {
     });
 
     searchResults.on('click', '.like', function() {
-        var loc = $(this).closest('li').find('.title').text();
-        liked.find('.empty').remove();
-        $('<li>', {text: loc}).appendTo(liked);
+        var loc = $(this).closest('.title').find('span:nth(0)').text();
+        $('<li></li>', {text: loc}).appendTo(liked);
     });
 
 });

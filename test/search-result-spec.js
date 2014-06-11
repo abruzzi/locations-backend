@@ -21,30 +21,28 @@ describe("search results", function() {
         searchResults.setResults(results);
 
         waitsFor(function() {
-            return ul.find("li").length > 0; 
+            return ul.find("li").length > 0;
         }, 1000);
 
         runs(function() {
             expect(ul.find("li").length).toBe(3);
             var location = $.trim(ul.find("li").eq(0).find(".title").text());
-            expect(location).toEqual("Richmond");
+            expect(location).toContain("Richmond");
         });
     });
 
     it("should like one of the search results", function() {
         searchResults.setResults(results);
 
-        var spy = jasmine.createSpy();
-        $(document).on('like', spy);
+        var spyEvent = spyOnEvent(document, 'like');
 
         waitsFor(function() {
-            return ul.find("li").length > 0; 
+            return ul.find("li").length > 0;
         }, 1000);
 
         runs(function() {
             ul.find('li').first().find('.like').click();
-            expect(spy).toHaveBeenCalled();
+            expect(spyEvent).toHaveBeenTriggered();
         });
     });
 });
-

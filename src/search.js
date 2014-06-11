@@ -1,7 +1,7 @@
 var Search = function() {};
 
 Search.prototype.fetch = function(query) {
-    var dfd; 
+    var dfd;
 
     if(!query) {
         dfd = $.Deferred();
@@ -10,8 +10,8 @@ Search.prototype.fetch = function(query) {
     }
 
     return $.ajax('/locations/' + query, {
-        dataType: 'json' 
+        dataType: 'json'
     }).then(function(resp) {
         return resp;
-    })
+    });
 }

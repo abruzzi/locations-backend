@@ -4,7 +4,8 @@ var SearchResults = function(element) {
 }
 
 SearchResults.prototype._bindClick = function(e) {
-    var name = $(e.target).closest('.title').text();
+    var name = $(e.target).closest('.title').find('span:nth(0)').text();
+    console.log(name);
     $(document).trigger('like', [name]);
 }
 
@@ -16,4 +17,3 @@ SearchResults.prototype.setResults = function(locations) {
         that.$element.html(html);
     });
 }
-
