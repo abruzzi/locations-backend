@@ -1,30 +1,31 @@
-describe("search results", function() {
+describe('search results', function() {
+    'use strict';
     var ul;
     var searchResults;
 
     var results = [
-        {name: "Richmond"},
-        {name: "Melbourne"},
-        {name: "Dockland"}
+        {name: 'Richmond'},
+        {name: 'Melbourne'},
+        {name: 'Dockland'}
     ];
 
     beforeEach(function() {
-        ul = $("<ul></ul>");
+        ul = $('<ul></ul>');
         searchResults = new SearchResults(ul);
     });
 
-    it("should constructor a new search result", function() {
+    it('should constructor a new search result', function() {
         expect(searchResults).toBeDefined();
     });
 
-    it("should set/get search result", function() {
+    it('should set/get search result', function() {
         searchResults.setResults(results);
         var res = searchResults.getResults();
         expect(res.length).toEqual(3);
     });
 
-    it("should load tempalte when render search results", function() {
-        spyOn($, 'ajax').andCallFake(function(e) {
+    it('should load tempalte when render search results', function() {
+        spyOn($, 'ajax').andCallFake(function() {
             return {
                 then: function() {}
             };
@@ -33,6 +34,7 @@ describe("search results", function() {
         searchResults.setResults(results);
         searchResults.render();
 
-        expect($.ajax.mostRecentCall.args[0].url).toEqual('/templates/location-detail.tmpl');
+        expect($.ajax.mostRecentCall.args[0].url)
+        .toEqual('/templates/location-detail.tmpl');
     });
 });

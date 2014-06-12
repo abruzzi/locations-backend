@@ -1,6 +1,7 @@
 var Search = function() {};
 
 Search.prototype.fetch = function(query) {
+    'use strict';
     var dfd;
 
     if(!query) {

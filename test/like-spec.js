@@ -1,20 +1,21 @@
-describe("like list", function() {
+describe('like list', function() {
+    'use strict';
     var ul;
     var like;
 
     beforeEach(function() {
-        ul = $("<ul></ul>");
+        ul = $('<ul></ul>');
         like = new Like(ul);
     });
 
-    it("should constructor a new list", function() {
+    it('should constructor a new list', function() {
         expect(like).toBeDefined();
     });
 
-    it("should add new item", function() {
-        like.add("juntao");
-        expect(ul.find("li").length).toBe(1);
-        expect(ul.find("li").eq(0).text()).toEqual("juntao");
+    it('should add new item', function() {
+        like.add('juntao');
+        expect(ul.find('li').length).toBe(1);
+        expect(ul.find('li').eq(0).text()).toEqual('juntao');
     });
 });
 
