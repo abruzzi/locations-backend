@@ -9,10 +9,22 @@ SearchResults.prototype._bindClick = function(e) {
 }
 
 SearchResults.prototype.setResults = function(locations) {
-    var template = $.get('/base/templates/location-detail.tmpl');
+    this.results = locations;
+}
+
+SearchResults.prototype.getResults = function () {
+    return this.results;
+}
+
+SearchResults.prototype.render = function() {
+    var template = $.get('/templates/location-detail.tmpl');
     var that = this;
     template.then(function(tmpl) {
-        var html = _.template(tmpl, {locations: locations});
-        that.$element.html(html);
+        that._render(tmpl);
     });
+}
+
+SearchResults.prototype._render = function(tmpl) {
+    var html = _.template(tmpl, {locations: this.results});
+    this.$element.html(html);
 }

@@ -17,32 +17,22 @@ describe("search results", function() {
         expect(searchResults).toBeDefined();
     });
 
-    it("should set search result", function() {
+    it("should set/get search result", function() {
         searchResults.setResults(results);
-
-        waitsFor(function() {
-            return ul.find("li").length > 0;
-        }, 1000);
-
-        runs(function() {
-            expect(ul.find("li").length).toBe(3);
-            var location = $.trim(ul.find("li").eq(0).find(".title").text());
-            expect(location).toContain("Richmond");
-        });
+        var res = searchResults.getResults();
+        expect(res.length).toEqual(3);
     });
 
-    it("should like one of the search results", function() {
-        searchResults.setResults(results);
-
-        var spyEvent = spyOnEvent(document, 'like');
-
-        waitsFor(function() {
-            return ul.find("li").length > 0;
-        }, 1000);
-
-        runs(function() {
-            ul.find('li').first().find('.like').click();
-            expect(spyEvent).toHaveBeenTriggered();
+    it("should load tempalte when render search results", function() {
+        spyOn($, 'ajax').andCallFake(function(e) {
+            return {
+                then: function() {}
+            };
         });
+
+        searchResults.setResults(results);
+        searchResults.render();
+
+        expect($.ajax.mostRecentCall.args[0].url).toEqual('/templates/location-detail.tmpl');
     });
 });
