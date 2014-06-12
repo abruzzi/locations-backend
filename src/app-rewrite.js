@@ -1,6 +1,7 @@
 $(function() {
     'use strict';
 
+    var searchForm = new SearchForm("#searchForm");
     var searchResults = new SearchResults('#searchResults ul');
     var liked = new Like('#likedPlaces ul');
     var search = new Search();
