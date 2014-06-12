@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "karma": "~0.12.16",
+    "gulp": "~3.8.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.4"
+  }
+}
