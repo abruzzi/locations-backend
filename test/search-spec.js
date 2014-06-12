@@ -17,6 +17,7 @@ describe('search async', function() {
     });
 
     it('should fetch data from remote', function() {
+        search.fetch('Melbourne');
         expect($.ajax).toHaveBeenCalled();
         expect($.ajax.mostRecentCall.args[0]).toContain('Melbourne');
     });
