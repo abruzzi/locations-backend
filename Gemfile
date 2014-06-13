@@ -7,9 +7,10 @@ group :development do
     gem 'shotgun'
 end
 
-group :development do
+group :test do
     gem 'rspec'
     gem 'capybara'
     gem 'cucumber'
     gem 'selenium-webdriver'
+    gem 'capybara-screenshot'
 end

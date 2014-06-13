@@ -3,6 +3,10 @@ require 'rspec/expectations'
 
 require 'capybara/cucumber'
 require 'capybara/session'
+
+require 'capybara-screenshot'
+require 'capybara-screenshot/cucumber'
+
 require 'json/pure'
 
 BASE_URL = "localhost:9292"
