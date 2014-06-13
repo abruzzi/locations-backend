@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# update the dependency
+# update all javascript dependencies
+bower install
+
+# update all ruby dependency
 bundle install
 
 # launch the application
