@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# update all npm dependencies
+npm install
+
 # update all javascript dependencies
 bower install
 
@@ -15,7 +18,7 @@ PID=$!
 sleep 5
 
 # run the cucumber features and record the status
-cucumber features/
+cucumber features/ --tags @like
 RES=$?
 
 # terminate after cucumber
