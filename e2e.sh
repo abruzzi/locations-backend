@@ -18,12 +18,12 @@ PID=$!
 sleep 5
 
 # run the cucumber features and record the status
-cucumber features/ --tags @like
+cucumber features/ --tags @search
 RES=$?
 
 # terminate after cucumber
 echo "terminate the application"
-kill $PID
+kill -9 $PID
 
 # now we know whether the cucumber success or not
 exit $RES

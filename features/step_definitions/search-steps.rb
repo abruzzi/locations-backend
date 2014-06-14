@@ -4,6 +4,10 @@ Given /^I am on the home page$/ do
     visit "http://#{BASE_URL}/index.html"
 end
 
+Then /^I should see the search box$/ do
+    page.should have_css('#locationInput')
+end
+
 When /^I type "([^"]*)" in search box$/ do |location|
     fill_in 'locationInput', :with => location
 end
