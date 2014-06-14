@@ -11,7 +11,7 @@ bundle install
 
 # launch the application
 echo "launch the application"
-rackup > /dev/null 2>&1 &
+rackup > tmplog 2>&1 &
 PID=$!
 
 # wait for it to start up
