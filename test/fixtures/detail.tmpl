@@ -1,12 +1,7 @@
 <% _.each(locations, function(location) { %>
-    <li>
-      <div class="title row">
-        <span class="large-10 columns">
-          <%= location.name %>
-        </span>
-        <span class="large-2 columns">
-            <a href="#" class="like label secondary">Like</a>
-        </span>
-      </div>
-    </li>
+    <div class="panel large-12 columns">
+        <h5><%= location.name %></h5>
+        <h6><%= location.description %></h6>
+        <a href="#" class="like button tiny right">Like</a>
+    </div>
 <% })%>

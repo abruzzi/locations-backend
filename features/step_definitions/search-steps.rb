@@ -19,7 +19,7 @@ end
 
 Then /^there are (\d)+ locations show up$/ do |number|
     page.should have_content(@location)
-    all('ul li .title').length.should eq number.to_i
+    all('.panel h5').length.should eq number.to_i
 end
 
 def convert pos
@@ -34,7 +34,7 @@ end
 
 When /^I liked the "([^"]*)" location$/ do |pos|
     num = convert(pos)
-    all("ul li .title a")[num].click
+    all(".panel a")[num].click
 end
 
 Then /^I should see it in liked locations$/ do

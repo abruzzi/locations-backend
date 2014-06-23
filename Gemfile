@@ -3,6 +3,8 @@ source "http://ruby.taobao.org"
 gem 'sinatra'
 gem 'json'
 
+gem 'sass'
+
 group :development do
     gem 'shotgun'
 end

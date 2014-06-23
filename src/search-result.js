@@ -6,7 +6,7 @@ var SearchResults = function(element) {
 
 SearchResults.prototype._bindClick = function(e) {
     'use strict';
-    var name = $(e.target).closest('.title').find('span:nth(0)').text();
+    var name = $(e.target).closest('.panel').find('h5:nth(0)').text();
     $(document).trigger('like', [name]);
 }
 

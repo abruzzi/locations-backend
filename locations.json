@@ -1,8 +1,26 @@
 [
-    {"name": "Melbourne 3121"},
-    {"name": "Melbourne 3000"},
-    {"name": "East Melbourne"},
-    {"name": "West Melbourne"},
-    {"name": "London"},
-    {"name": "Pune"}
+    {
+        "name": "Melbourne 3121",
+        "description": "The great place, very nice place to go"
+    },
+    {
+        "name": "Melbourne 3000",
+        "description": "The great place, very nice place to go"
+    },
+    {
+        "name": "East Melbourne",
+        "description": "The great place, very nice place to go"
+    },
+    {
+        "name": "West Melbourne",
+        "description": "The great place, very nice place to go"
+    },
+    {
+        "name": "London",
+        "description": "The great place, very nice place to go"
+    },
+    {
+        "name": "Pune",
+        "description": "The great place, very nice place to go"
+    }
 ]
