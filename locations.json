@@ -1,11 +1,11 @@
 [
     {
         "name": "Melbourne 3121",
-        "description": "The great place, very nice place to go"
+        "description": "Melbourne is the capital and most populous city in the state of Victoria, and the second most populous city in Australia."
     },
     {
-        "name": "Melbourne 3000",
-        "description": "The great place, very nice place to go"
+        "name": "Melbourne Cricket Ground",
+        "description": "The Melbourne Cricket Ground (MCG) is an Australian sports stadium located in Yarra Park, Melbourne, Victoria, and is home to the Melbourne Cricket Club."
     },
     {
         "name": "East Melbourne",
@@ -17,10 +17,22 @@
     },
     {
         "name": "London",
-        "description": "The great place, very nice place to go"
+        "description": "London is the capital city of England and the United Kingdom."
     },
     {
         "name": "Pune",
-        "description": "The great place, very nice place to go"
+        "description": "Pune (formerly known as Poona, English pronunciation: /ˈpuːnə/;[5][6][7][8] Marathi: [puɳeː] ( listen)) is the seventh largest metropolis in India and the second largest in the state of Maharashtra."
+    },
+    {
+    "name":"Punjab",
+    "description": "Punjab, also spelled Panjab, is the most developed and populous province of Pakistan with approximately 56% of the country's total population."
+    },
+    {
+        "name": "Long Island",
+        "description": "Long Island is an island in the U.S. state of New York."
+    },
+    {
+        "name": "Los Angeles",
+        "description": "Los Angeles (Listeni/lɔːs ˈændʒələs/, /lɔːs ˈæŋɡələs/ or Listeni/lɒs ˈændʒəliːz/, Spanish: Los Ángeles [los ˈaŋxeles] meaning The Angels), officially the City of Los Angeles, often known by its initials L.A."
     }
 ]
