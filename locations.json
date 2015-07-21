@@ -1,38 +1,318 @@
 [
-    {
-        "name": "Melbourne 3121",
-        "description": "Melbourne is the capital and most populous city in the state of Victoria, and the second most populous city in Australia."
-    },
-    {
-        "name": "Melbourne Cricket Ground",
-        "description": "The Melbourne Cricket Ground (MCG) is an Australian sports stadium located in Yarra Park, Melbourne, Victoria, and is home to the Melbourne Cricket Club."
-    },
-    {
-        "name": "East Melbourne",
-        "description": "The great place, very nice place to go"
-    },
-    {
-        "name": "West Melbourne",
-        "description": "The great place, very nice place to go"
-    },
-    {
-        "name": "London",
-        "description": "London is the capital city of England and the United Kingdom."
-    },
-    {
-        "name": "Pune",
-        "description": "Pune (formerly known as Poona, English pronunciation: /ˈpuːnə/;[5][6][7][8] Marathi: [puɳeː] ( listen)) is the seventh largest metropolis in India and the second largest in the state of Maharashtra."
-    },
-    {
-    "name":"Punjab",
-    "description": "Punjab, also spelled Panjab, is the most developed and populous province of Pakistan with approximately 56% of the country's total population."
-    },
-    {
-        "name": "Long Island",
-        "description": "Long Island is an island in the U.S. state of New York."
-    },
-    {
-        "name": "Los Angeles",
-        "description": "Los Angeles (Listeni/lɔːs ˈændʒələs/, /lɔːs ˈæŋɡələs/ or Listeni/lɒs ˈændʒəliːz/, Spanish: Los Ángeles [los ˈaŋxeles] meaning The Angels), officially the City of Los Angeles, often known by its initials L.A."
-    }
+  {
+    "description": "The largest city and national capital of the Netherlands (Holland).",
+    "name": "Amsterdam"
+  },
+  {
+    "description": "Formerly known as Angora, second largest city and the national capital of Turkey.",
+    "name": "Ankara"
+  },
+  {
+    "description": "Named after the Greek goddess Athena, the municipality of Athens is the national capital of Greece.",
+    "name": "Athens (Athína)"
+  },
+  {
+    "description": "Gaming Mecca of the East Coast, home of the Miss America Pageant, site of the world famous Boardwalk in the State of New Jersey.",
+    "name": "Atlantic City"
+  },
+  {
+    "description": "Largest city in Maryland, USA.",
+    "name": "Baltimore"
+  },
+  {
+    "description": "Thailand's national capital, its largest city and the country's main cultural centre.",
+    "name": "Bangkok (Krung Thep)"
+  },
+  {
+    "description": "The national capital and second largest city of China. ",
+    "name": "Beijing (Peking)"
+  },
+  {
+    "description": "The largest city and national capital of Germany (Deutschland).",
+    "name": "Berlin"
+  },
+  {
+    "description": "The national capital city of Switzerland with an UNESCO recognized mediaeval city centre.",
+    "name": "Berne (Bern)"
+  },
+  {
+    "description": "The national capital of Belgium, sometimes called the European capital because the city houses main institutions of the European Union and is also the political seat of the NATO.",
+    "name": "Brussels (Stad Brussel, Bruxelles, Brüssel)"
+  },
+  {
+    "description": "Hungary's capital city, comprises of the hilly Buda on the west and the flat Pest on the east bank of the Danube river.",
+    "name": "Budapest"
+  },
+  {
+    "description": "The former (1536) Ciudad del Espíritu Santo y Puerto Santa María del Buen Ayre is the largest city and the national capital of Argentina.",
+    "name": "Buenos Aires (Ciudad de Buenos Aires, city of \"Good Airs\" in Spanish)"
+  },
+  {
+    "description": "Located on the banks and islands of the Nile River in northeast Egypt, Cairo is the largest city in both Africa and the Middle East, the national capital of Egypt and a cultural centre of the Arab world.",
+    "name": "Cairo"
+  },
+  {
+    "description": "Australia's planned capital city, founded in 1908, some years after the federation of Australian states into the Commonwealth of Australia in 1901.",
+    "name": "Canberra"
+  },
+  {
+    "description": "Famous city at the French Riviera, the Côte d'Azur in France, tourist attraction and host of the annual Cannes Film Festival.",
+    "name": "Cannes"
+  },
+  {
+    "description": "Since some years the city is a popular tourist destination in South Africa; Cape Town is the legislative centre of the country and capital city of the Western Cape Province.",
+    "name": "Cape Town (Sasekapa, Kaapstad)"
+  },
+  {
+    "description": "The City of Chicago is the third largest city in the United States located on the shores of Lake Michigan, Illinois.",
+    "name": "Chicago"
+  },
+  {
+    "description": "Cologne is the oldest cities in Germany. The name Cologne stems from Agrippina, the Cologne-born wife of the Roman Emperor Claudius, who proclaimed the city \"Colonia\" in the year 50 AD.",
+    "name": "Cologne (Stadt Köln)"
+  },
+  {
+    "description": "The capital city of Denmark, the city houses the national parliament, the government, and the Danish monarchy.",
+    "name": "Copenhagen (København)"
+  },
+  {
+    "description": "Visit Damascus one of the oldest city in the world and the national capital of Syria.",
+    "name": "Damascus"
+  },
+  {
+    "description": "The North Indian city is together with New Delhi the \"National Capital Territory\", second largest city and capital city of India.",
+    "name": "Delhi"
+  },
+  {
+    "description": "Main city of the emirate Dubai, in the United Arab Emirates, the city will host the first Dubai International Film Festival in December 2004.",
+    "name": "Dubai City"
+  },
+  {
+    "description": "Bhaile Átha Cliath is the capital and largest city of Ireland",
+    "name": "Dublin"
+  },
+  {
+    "description": "Historical city and capital city of the region Tuscany (Toscana) in Italy.",
+    "name": "Florence (Italian: Firenze)"
+  },
+  {
+    "description": "Cosmopolitan Swiss city at the Lake Geneva, today home to around 190 international organisations, both governmental and non-governmental.",
+    "name": "Genève (Genf, Genève, Geneva), Switzerland"
+  },
+  {
+    "description": "Netherlands seat of the Dutch government and as one of the capitals of the United Nations it hosts, beside other institutions of the UN, the International Court of Justice.",
+    "name": "Hague, The (Den Haag)"
+  },
+  {
+    "description": "The national capital of Viet Nam, a must see is the Old Quarter of Hanoi, the oldest continuously developed area of Viet Nam with its narrow streets of houses, still occupied by guilds of tradespeople, a legacy of Hanoi's ancient past, but the area is challenged by rapid changes since Viet Nam's policy of economic openness, so hurry.",
+    "name": "Ha Noi"
+  },
+  {
+    "description": "Once Great Britain has seized the city in 1762, and then exchanged it for Florida the following year. Habana is the capital of Cuba and the largest city in the Caribbean.",
+    "name": "Havana (San Cristóbal de La Habana)"
+  },
+  {
+    "description": "Largest city and the capital city of Finland.",
+    "name": "Helsinki"
+  },
+  {
+    "description": "The city was a former British dependency that was returned to China in 1997, now it is formaly a Special Administrative Region (SAR) of China situated at the South China Sea, by population the fourth largest metropolitan area of the PRC.",
+    "name": "Hong Kong (Xianggang, Hsiang Kang, the Fragrant Harbour)"
+  },
+  {
+    "description": "Most populous city, principal port and capital of Hawai'i, a state of the USA. The city is located along the southeast coast of the island of Oahu.",
+    "name": "Honolulu (the place of shelter)"
+  },
+  {
+    "description": "Formerly Constantinople, the only city in the world that is located on two continents, largest city and seaport in   Turkey.",
+    "name": "Istanbul"
+  },
+  {
+    "description": "Formerly (until 1949) Batavia, (from 1949-72) Djakarta, located on the island of Java, is the largest city and the national capital of Indonesia.",
+    "name": "Jakarta"
+  },
+  {
+    "description": "The capital city of the State of Israel, also claimed by the Palestinians as the capital of Palestine; the ancient Middle Eastern city is of key importance to the religions of Judaism, Christianity, and Islam.",
+    "name": "Jerusalem"
+  },
+  {
+    "description": "State of Missouri, often abbreviated KCMO, a trading post in 1821, today Kansas City is the centre of the Kansas City Metropolitan Area and a centre for night life and music.",
+    "name": "Kansas City"
+  },
+  {
+    "description": "Kathmandu Metropolitan City is the cultural and religious centre and the capital city of Nepal, famous for its Buddhist and Hindu temples and palaces.",
+    "name": "Kathmandu"
+  },
+  {
+    "description": "It is the largest city and the national capital of Malaysia well known by its landmark the Petronas Twin Towers, one of the tallest buildings in the world.",
+    "name": "Kuala Lumpur"
+  },
+  {
+    "description": "Largest city, cultural and educational centre and the national capital of Portugal located in the west of the country on the Atlantic coast.",
+    "name": "Lisbon"
+  },
+  {
+    "description": "Largest metropolitan area and the capital city of both, the United Kingdom and of England, a polycentric city with many core districts and no clear hierarchy among them, Londinium was founded by the Romans in the 1st century AD.",
+    "name": "London"
+  },
+  {
+    "description": "The City of Los Angeles is a very large urban sprawl in south California, in the west of the USA, it's the second most populous city of the country and famous for its movie and television productions (Hollywood). By the way, nobody walks in LA.",
+    "name": "Los Angeles (LA)"
+  },
+  {
+    "description": "Originated from a castle called Lucilinburhuc and its surrounding settlement, today the city is the national capital of the Grand Duchy of Luxembourg and one of the capitals of banking in Europe.",
+    "name": "Luxembourg (Luxemburg, Lëtzebuerg)"
+  },
+  {
+    "description": "Proclaimed official capital of the Kingdom of Spain in 1561, Spain's largest city and the national centre of arts and industry.",
+    "name": "Madrid"
+  },
+  {
+    "description": "The pre-Hispanic village called Maynila is today the Capital City of the Philippines.",
+    "name": "Manila"
+  },
+  {
+    "description": "Second largest city (by population) of Australia, a trendy metropolis with everything you expect from a big city.",
+    "name": "Melbourne"
+  },
+  {
+    "description": "In ancient times the pre-Columbian city Tenochtitlán, today the national capital of Mexico, the oldest capital in the New World, founded in 1525 by the Spaniards.",
+    "name": "Mexico City"
+  },
+  {
+    "description": "North Italian City, the capital of the Lombardy (Lombardia) region and so-called the economic capital of Italy, famous for fashion Italian style.",
+    "name": "Milan (Milano, Mailand)"
+  },
+  {
+    "description": "Largest city in the province of Québec, in Canada, the world's second largest francophone city after Paris is a major centre of business, economy, culture, and world affairs.",
+    "name": "Montreal (Montréal)"
+  },
+  {
+    "description": "The centre of power and the capital of the Russian Federation, well known are its landmarks the Kremlin, the Red Square and the Saint Basil's Cathedral, and famous for the Russian ballet and the performing arts.",
+    "name": "Moscow (Moskvá)"
+  },
+  {
+    "description": "Formerly known as Bombay, Mumbai is one of the most populous cities in the world, capital of the state of Maharashtra, India.",
+    "name": "Mumbai"
+  },
+  {
+    "description": "Third largest city of Germany and state capital of Bavaria, founded in 1158; the city is famous for its rural fashion, its beers and as the host of the annual Oktoberfest - the biggest public festival of the world; and in Munich is the headquarters of BMW.",
+    "name": "Munich (München)"
+  },
+  {
+    "description": "The city of the Annunciation, In the New Testament, the city is described as the childhood home of Jesus,. The ancient town in northern Israel is the capital of the Northern District of the country, and the largest Arab city in Israel.",
+    "name": "Nazareth"
+  },
+  {
+    "description": "New York City, the Big Apple, the most populous city of the USA, in the state of New York, the city is seat of the United Nations headquarters.",
+    "name": "New York"
+  },
+  {
+    "description": "Birthplace of Yves Klein, a relatively small but famous city at the French Riviera, one of the tourist attractions of the Côte d'Azur in France.",
+    "name": "Nice (ital.: Nizza)"
+  },
+  {
+    "description": "The business and industrial city, part of the Osaka-Kobe-Kyoto metropolitan area, is located on the main island of Honshu, at the mouth of the Yodo River. Osaka used to be called the city of \"eight hundred eight bridges\", and it's one of the oldest cities in Japan.",
+    "name": "Osaka"
+  },
+  {
+    "description": "Considered as one of the world's most beautiful capitals, a cosmopolitan North American city with an European flair, located in the eastern part of the province of Ontario. Ottawa is the national capital of Canada.",
+    "name": "Ottawa"
+  },
+  {
+    "description": "Situated in the southern part of the country at the head of Oslo Fjord, surrounded by forested hills and mountains. Oslo is the cultural centre and the capital city of Norway",
+    "name": "Oslo"
+  },
+  {
+    "description": "The city takes its name from the Parisii, Celtic Iron Age people who lived on the banks of the Seine river. Today the city is the cultural center, largest city and the national capital of a still more or less central orientated French Republic. Paris is situated at the center of the Île-de-France region on the Seine river. The city was held by the Romans for some times, who called it Lutetia and later by the Merovingians, a Salian Frankish dynasty. Paris has been, and still is, the center of power of France.",
+    "name": "Paris"
+  },
+  {
+    "description": "The largest city in Pennsylvania and one of the oldest cities in the USA, Established as a Quaker colony by William Penn and others in 1681, it was the site in 1776 of the signing of the Declaration of Independence and in 1787 of the adoption of the Constitution of the U.S. and last but not least the birthplace of the Philly Sound, Philadelphia' soul music.",
+    "name": "Philadelphia"
+  },
+  {
+    "description": "The national capital of the Kingdom of Cambodia, situated in the south-west of the country at the confluence of the three rivers Mekong, Tonle Sap and Bassac. A city with many cultural and historical attractions like the Royal Palace, Silver Pagoda and the National Museum. The city takes its name from the present Wat Phnom or Hill Temple, by the way, an Elephant ride is available there.",
+    "name": "Phnom Penh"
+  },
+  {
+    "description": "The city takes its name from praga, which means \"ford\", in history many settlements gathered around such a shallow crossing on a river. Prague is the capital of Czech Republic.",
+    "name": "Prague (Praha)"
+  },
+  {
+    "description": "San Francisco de Quito, second most populous city and the national capital of Ecuador. The city lies at an altitude of 2,850 m (9,350 ft), making it the second highest capital in the world only surpassed only by La Paz in Bolivia.",
+    "name": "Quito"
+  },
+  {
+    "description": "The capital city of Iceland. In the ninth century, the first Vikings settled in the area where the city would later rise. They named the place Reykjavík, it means \"smoky bay\" because of the hot steam rising from the abundant geothermal springs.",
+    "name": "Reykjavík"
+  },
+  {
+    "description": "Famous City in southeastern Brazil and former capital of the country from 1764 to 1960.",
+    "name": "Rio de Janeiro (\"River of January\" in Portuguese)"
+  },
+  {
+    "description": "One of the most cosmopolitan cities in the United States.",
+    "name": "San Francisco (Frisco)"
+  },
+  {
+    "description": "America's oldest capital city; New Mexico, USA. Founded in 1607 by Spanish explorers.",
+    "name": "Santa Fe"
+  },
+  {
+    "description": "The capital city of Chile. Founded 1541, by Pedro de Valdivia.",
+    "name": "Santiago"
+  },
+  {
+    "description": "International Brazilian City, Brazil.",
+    "name": "São Paulo"
+  },
+  {
+    "description": "Harbour city at the mouth of the Yangtze River and the largest city in China, traditionally always in rivalry with Beijing.",
+    "name": "Shanghai"
+  },
+  {
+    "description": "The capital city of the Republic of Singapore.",
+    "name": "Singapore City"
+  },
+  {
+    "description": "Largest city and the capital of Sweden.",
+    "name": "Stockholm"
+  },
+  {
+    "description": "2003 marks the 300th anniversary of the founding of St. Petersburg, the cultural capital of the Russian Federation.",
+    "name": "Saint-Petersburg 1703 - 2003"
+  },
+  {
+    "description": "Most populous Australian City with an international air, Australia.",
+    "name": "Sydney"
+  },
+  {
+    "description": "The capital city and the political, economic, and educational centre of Taiwan.",
+    "name": "Taipei"
+  },
+  {
+    "description": "The \"Eastern Capital\", formerly Edo (until 1868), the capital and largest city of Japan.",
+    "name": "Tokyo"
+  },
+  {
+    "description": "largest city and the cultural and entertainment capital of Canada",
+    "name": "Toronto"
+  },
+  {
+    "description": "The famous Italian lagoon city, the city of canals is the capital of the Veneto region of Italy.",
+    "name": "Venice (Venezia)"
+  },
+  {
+    "description": "The capital city of Austria",
+    "name": "Vienna (Wien)"
+  },
+  {
+    "description": "The capital city of the United States of America. Washington, DC was founded in 1791 as the worlds first planned capital city, USA.",
+    "name": "Washington"
+  },
+  {
+    "description": "International Swiss City and the largest city in Switzerland",
+    "name": "Zürich"
+  }
 ]
