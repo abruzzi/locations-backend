@@ -6,7 +6,7 @@ Search.prototype.fetch = function(query) {
 
     if(!query) {
         dfd = $.Deferred();
-        dfd.resolove([]);
+        dfd.resolve([]);
         return dfd.promise();
     }
 

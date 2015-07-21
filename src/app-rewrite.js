@@ -2,7 +2,7 @@ $(function() {
     'use strict';
 
     var searchForm = new SearchForm('#searchForm');
-    var searchResults = new SearchResults('#searchResults');
+    var searchResults = new SearchResults('#results');
     var liked = new Like('#likedPlaces nav ul');
     var search = new Search();
 
