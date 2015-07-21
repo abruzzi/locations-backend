@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/cross_origin'
 
 require 'json'
-
+require 'httparty'
 
 class Locations < Sinatra::Base
     set :public_folder,  File.dirname(__FILE__)
@@ -18,12 +18,19 @@ class Locations < Sinatra::Base
     end
 
     def load_data
-      @locations = JSON.parse(File.read('locations.json'))
+      url = "http://s3-us-west-2.amazonaws.com/testable-js-datastore/locations.json"
+      response = HTTParty.get(url)
+      @locations = JSON.parse(response.body)
     end
 
     def initialize
         super
         load_data
+    end
+
+    get '/refresh' do
+      load_data
+      redirect '/locations'
     end
 
     get '/locations' do
@@ -32,5 +39,9 @@ class Locations < Sinatra::Base
       else
         @locations.to_json
       end
+    end
+
+    get '/' do
+      File.open('index.html').read
     end
 end
