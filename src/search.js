@@ -10,7 +10,7 @@ Search.prototype.fetch = function(query) {
         return dfd.promise();
     }
 
-    return $.ajax('/locations/' + query, {
+    return $.ajax('/locations?location=' + query, {
         dataType: 'json'
     }).then(function(resp) {
         return resp;
