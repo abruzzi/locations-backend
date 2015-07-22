@@ -12,21 +12,30 @@ var LikedLocation = React.createClass({
 
 var LikedLocationList = React.createClass({
   render: function() {
+    var list = [];
+    this.props.data.forEach(function(item) {
+      list.push(<LikedLocation location={item} key={item.name} />)
+    });
     return (
       <div className="large-4 medium-4 columns likedPlaces">
         <HeadLine title={this.props.title} />
+        <ul>{list}</ul>
       </div>
     );
   }
 });
 
 var SearchResult = React.createClass({
+  handleLike: function() {
+    this.props.handleLike(this.refs.locationName.getDOMNode().textContent);
+  },
+
   render: function() {
     return (
       <div className="panel large-12 columns">
-        <h5>{this.props.location.name}</h5>
+        <h5 ref="locationName">{this.props.location.name}</h5>
         <p>{this.props.location.description}</p>
-        <a href="#" className="like button tiny right">Like</a>
+        <a href="#" className="like button tiny right" onClick={this.handleLike}>Like</a>
       </div>
     );
   }
@@ -35,8 +44,9 @@ var SearchResult = React.createClass({
 var SearchResultList = React.createClass({
   render: function() {
     var list = [];
+    var handleLike = this.props.handleLike;
     this.props.data.forEach(function(item) {
-      list.push(<SearchResult location={item} key={item.name}/>)
+      list.push(<SearchResult location={item} key={item.name} handleLike={handleLike}/>)
     });
     return (
       <div className="large-8 medium-8 columns searchResults">
@@ -85,8 +95,8 @@ var ResultPanel = React.createClass({
   render: function() {
     return (
       <div className="row">
-        <SearchResultList data={this.props.results} title="Search Results" />
-        <LikedLocationList data={this.props.liked} title="Liked Locations"/>
+        <SearchResultList data={this.props.results} title="Search Results" handleLike={this.props.handleLike}/>
+        <LikedLocationList data={this.props.liked} title="Liked Locations" />
       </div>
     );
   }
@@ -109,12 +119,20 @@ var SearchLocationApp = React.createClass({
     });
   },
 
+  handleLike: function(item) {
+    var liked = this.state.liked;
+    liked.push(item);
+    this.setState({
+      liked: liked
+    });
+  },
+
   render: function() {
     return (
       <div>
         <SearchForm onSearch={this.handleSearch} />
         <Divider />
-        <ResultPanel results={this.state.results} liked={this.state.liked} />
+        <ResultPanel results={this.state.results} liked={this.state.liked} handleLike={this.handleLike} />
       </div>
     )
   }

@@ -41,8 +41,13 @@ class Locations < Sinatra::Base
       end
     end
 
-    get '/' do
+    get '/react' do
       content_type "text/html"
       File.open('react.html').read
+    end
+
+    get '/' do
+      content_type "text/html"
+      File.open('index.html').read
     end
 end
