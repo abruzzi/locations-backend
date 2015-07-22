@@ -13,7 +13,7 @@ var LikedLocation = React.createClass({
 var LikedLocationList = React.createClass({
   render: function() {
     return (
-      <div className="large-4 medium-4 columns" id="likedPlaces" >
+      <div className="large-4 medium-4 columns likedPlaces">
         <HeadLine title={this.props.title} />
       </div>
     );
@@ -35,11 +35,11 @@ var SearchResult = React.createClass({
 var SearchResultList = React.createClass({
   render: function() {
     var list = [];
-    this.props.results.forEach(function(result) {
-      list.push(<SearchResult location={result} />)
+    this.props.data.forEach(function(item) {
+      list.push(<SearchResult location={item} key={item.name}/>)
     });
     return (
-      <div className="large-8 medium-8 columns" id="searchResults">
+      <div className="large-8 medium-8 columns searchResults">
         <HeadLine title={this.props.title} />
         {list}
       </div>
@@ -48,14 +48,23 @@ var SearchResultList = React.createClass({
 });
 
 var SearchForm = React.createClass({
+  handleChange: function() {
+    this.props.onSearch(
+      this.refs.termText.getDOMNode().value
+    );
+  },
+
   render: function() {
     return (
-      <div className="row" id="searchForm">
+      <div className="row searchForm">
         <div className="large-9 medium-9 columns">
-          <input type="text" value="" placeholder="Type a location to search"/>
+          <input type="text" placeholder="Type a location to search"
+          ref="termText"/>
         </div>
         <div className="large-3 medium-3 columns">
-            <input type="button" className="submit button tiny" value="search" />
+          <input type="button" className="submit button tiny" value="search"
+          ref="searchButton"
+          onClick={this.handleChange} />
         </div>
       </div>
     );
@@ -76,38 +85,39 @@ var ResultPanel = React.createClass({
   render: function() {
     return (
       <div className="row">
-        <SearchResultList results={results} title="Search Results" />
-        <LikedLocationList title="Liked Locations"/>
+        <SearchResultList data={this.props.results} title="Search Results" />
+        <LikedLocationList data={this.props.liked} title="Liked Locations"/>
       </div>
     );
   }
 });
 
 var SearchLocationApp = React.createClass({
+  getInitialState: function() {
+      return {
+        results: [],
+        liked: []
+      }
+  },
+
+  handleSearch: function(term) {
+    var that = this;
+    $.get('/locations?location='+term).done(function(data) {
+      that.setState({
+        results: data
+      })
+    });
+  },
+
   render: function() {
     return (
       <div>
-        <SearchForm />
+        <SearchForm onSearch={this.handleSearch} />
         <Divider />
-        <ResultPanel />
+        <ResultPanel results={this.state.results} liked={this.state.liked} />
       </div>
     )
   }
 });
-
-var results = [
-    {
-        "name": "Melbourne 3121",
-        "description": "Melbourne is the capital and most populous city in the state of Victoria, and the second most populous city in Australia."
-    },
-    {
-        "name": "Melbourne Cricket Ground",
-        "description": "The Melbourne Cricket Ground (MCG) is an Australian sports stadium located in Yarra Park, Melbourne, Victoria, and is home to the Melbourne Cricket Club."
-    },
-    {
-        "name": "East Melbourne",
-        "description": "The great place, very nice place to go"
-    }
-];
 
 React.render(<SearchLocationApp />, document.getElementById('container'));
