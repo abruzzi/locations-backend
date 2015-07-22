@@ -3,5 +3,6 @@ node_modules/
 .bower-cache/
 .bower-registry/
 bower_components/
+.module-cache/
 build/
 tmplog
