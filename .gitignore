@@ -2,6 +2,5 @@
 node_modules/
 .bower-cache/
 .bower-registry/
-bower_components/
 build/
 tmplog
