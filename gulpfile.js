@@ -1,7 +1,27 @@
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint');
-var _ = require('lodash');
-var karma = require('karma').server;
+    jshint = require('gulp-jshint'),
+    react = require('gulp-react'),
+    browserify = require('browserify'),
+    reactify = require('reactify'),
+    source = require("vinyl-source-stream"),
+    harmonize = require('harmonize');
+
+harmonize();
+
+gulp.task('convert', function () {
+  return gulp.src('src/react/components/*.jsx')
+    .pipe(react())
+    .pipe(gulp.dest('src/react-build/'));
+});
+
+gulp.task('browserify', ['convert'], function(){
+  var b = browserify();
+  b.transform(reactify);
+  b.add('src/react-build/main.js');
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('src/react-build/'));
+});
 
 gulp.task('js', function() {
     return gulp.src(['src/*.js', 'test/*.js'])
@@ -20,6 +40,9 @@ var Config = function() {
         });
     };
 };
+
+var _ = require('lodash');
+var karma = require('karma').server;
 
 var conf = new Config();
 var func = require('./karma.conf.js');

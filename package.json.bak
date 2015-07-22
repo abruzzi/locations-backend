@@ -2,20 +2,23 @@
   "scripts": {
     "test": "jest"
   },
+
   "jest": {
     "scriptPreprocessor": "./preprocessor.js",
     "unmockedModulePathPatterns": [
       "./node_modules/react"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
     ]
   },
+
   "devDependencies": {
     "browserify": "^11.0.0",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-jshint": "~1.6.2",
     "gulp-react": "^3.0.1",
-    "harmonize": "^1.4.4",
-    "jest-cli": "^0.4.15",
     "jshint-stylish": "~0.2.0",
     "karma": "~0.12.16",
     "karma-chrome-launcher": "~0.1.4",
@@ -25,21 +28,5 @@
     "react-tools": "^0.13.3",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "name": "locations-backend",
-  "version": "1.0.0",
-  "description": "locations serach api and it's frontend",
-  "main": "gulpfile.js",
-  "directories": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/abruzzi/locations-backend.git"
-  },
-  "author": "Qiu Juntao",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/abruzzi/locations-backend/issues"
   }
 }
