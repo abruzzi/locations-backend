@@ -6,6 +6,13 @@
     "scriptPreprocessor": "./preprocessor.js",
     "unmockedModulePathPatterns": [
       "./node_modules/react"
+    ],
+    "testPathIgnorePatterns": [
+      "./node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
     ]
   },
   "devDependencies": {
