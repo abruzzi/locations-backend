@@ -8,7 +8,13 @@
           <p>
             {{this.description}}
           </p>
-          <button type="button" class="like">like</button>
+          <button type="button" class="like" data-id="{{this.id}}">
+            {{#if this.state }}
+            unlike
+            {{else}}
+            like
+            {{/if}}
+          </button>
         </div>
       </li>
       {{/each}}

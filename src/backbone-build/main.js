@@ -25773,19 +25773,31 @@ $(function() {
 
 },{"./models/location-model":15,"./views/search-location-view":21,"jquery":12}],15:[function(require,module,exports){
 var Backbone = require('backbone');
+var _ = require('lodash');
 
 module.exports = Backbone.Model.extend({
   defaults: {
     locations: [],
     liked: []
+  },
+
+  initialize: function(model) {
+    this.bind('change:locations', this.rehash);
+  },
+
+  rehash: function() {
+    var locations = this.get('locations');
+    this.set('locations', _.map(locations, function(item) {
+        return _.extend(item, {id: _.uniqueId('loc_'), state: false});
+    }));
   }
 });
 
-},{"backbone":1}],16:[function(require,module,exports){
+},{"backbone":1,"lodash":13}],16:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partials,data) {
-    return "        <li>"
+    return "        <li class=\"like\">"
     + this.escapeExpression(this.lambda((depth0 != null ? depth0.name : depth0), depth0))
     + "</li>\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -25807,13 +25819,21 @@ module.exports = HandlebarsCompiler.template({"compiler":[6,">= 2.0.0-beta.1"],"
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partials,data) {
-    var alias1=this.lambda, alias2=this.escapeExpression;
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
 
   return "      <li>\n        <div class=\"place\">\n          <h4>"
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
     + "</h4>\n          <p>\n            "
     + alias2(alias1((depth0 != null ? depth0.description : depth0), depth0))
-    + "\n          </p>\n          <button type=\"button\" class=\"like\">like</button>\n        </div>\n      </li>\n";
+    + "\n          </p>\n          <button type=\"button\" class=\"like\" data-id=\""
+    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+    + "\">\n"
+    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.state : depth0),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
+    + "          </button>\n        </div>\n      </li>\n";
+},"2":function(depth0,helpers,partials,data) {
+    return "            unlike\n";
+},"4":function(depth0,helpers,partials,data) {
+    return "            like\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
@@ -25929,18 +25949,16 @@ module.exports = Backbone.View.extend({
     like: function(event) {
       event.preventDefault();
 
-      var name = $(event.currentTarget).parent().find('h4').text();
-      var desc = $(event.currentTarget).parent().find('p').text();
+      var id = $(event.currentTarget).data('id');
+      var collection = this.model.get('locations');
+      var current = _.first(_.where(collection, {'id': id}));
+      current.state = !current.state;
 
-      var liked = this.model.get('liked');
-
-      liked.push({
-        name: name,
-        description: desc
-      });
-
+      var liked = _.select(collection, {'state': true});
       this.model.set('liked', liked);
-      this.model.trigger('change:liked', this.model);
+
+      console.log(this.model);
+      // this.model.trigger('change:liked', this.model);
     },
 
     render: function() {

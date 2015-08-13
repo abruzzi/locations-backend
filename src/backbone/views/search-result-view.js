@@ -17,18 +17,14 @@ module.exports = Backbone.View.extend({
     like: function(event) {
       event.preventDefault();
 
-      var name = $(event.currentTarget).parent().find('h4').text();
-      var desc = $(event.currentTarget).parent().find('p').text();
+      var id = $(event.currentTarget).data('id');
+      var collection = this.model.get('locations');
+      
+      var current = _.first(_.where(collection, {'id': id}));
+      current.state = !current.state;
 
-      var liked = this.model.get('liked');
-
-      liked.push({
-        name: name,
-        description: desc
-      });
-
+      var liked = _.select(collection, {'state': true});
       this.model.set('liked', liked);
-      this.model.trigger('change:liked', this.model);
     },
 
     render: function() {
