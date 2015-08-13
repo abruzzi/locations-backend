@@ -18,25 +18,27 @@ module.exports = function(config) {
       { pattern: 'templates/*.tmpl', included: false, served: true },
       { pattern: 'test/fixtures/**/*.html', included: false, served: true },
       { pattern: '*.json', included: false, served: true },
-      'bower_components/jquery/dist/jquery.js',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-      'bower_components/underscore/underscore.js',
-      'src/**/*.js',
-      'test/**/*spec.js'
+      'vendor/jquery/dist/jquery.js',
+      'vendor/jasmine-jquery/lib/jasmine-jquery.js',
+      'vendor/underscore/underscore.js',
+      'src/*.js',
+      'test/*spec.js'
     ],
 
 
     // list of files to exclude
     exclude: [
       'src/app-rewrite.js',
-      'test/app-spec.js'
+      'test/app-spec.js',
+      'src/build/*.js',
+      'src/build/react-build/*.js'
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-    
+
     },
 
 

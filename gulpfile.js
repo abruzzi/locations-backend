@@ -50,7 +50,7 @@ var func = require('./karma.conf.js');
 func(conf);
 
 gulp.task('ci', function(done) {
-    karma.start(_.assign({}, conf, {singleRun: true}), done);
+    karma.start(_.assign({}, conf, {singleRun: true, logLevel: 'INFO'}), done);
 });
 
 gulp.task('unit', function(done) {
