@@ -14,6 +14,14 @@ gulp.task('convert', function () {
     .pipe(gulp.dest('src/react-build/'));
 });
 
+gulp.task('backbone', function() {
+    var b = browserify();
+    b.add('src/backbone/app.js');
+    return b.bundle()
+      .pipe(source('main.js'))
+      .pipe(gulp.dest('src/backbone-build/'));
+});
+
 gulp.task('browserify', ['convert'], function(){
   var b = browserify();
   b.transform(reactify);
@@ -47,7 +55,15 @@ var karma = require('karma').server;
 var conf = new Config();
 var func = require('./karma.conf.js');
 
+var confbb = new Config();
+var funcbb = require('./karma.bb.js');
+
 func(conf);
+funcbb(confbb);
+
+gulp.task('bbunit', function(done) {
+  karma.start(_.assign({}, confbb, {singleRun: true, logLevel: 'INFO'}), done);
+});
 
 gulp.task('ci', function(done) {
     karma.start(_.assign({}, conf, {singleRun: true, logLevel: 'INFO'}), done);

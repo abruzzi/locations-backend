@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "gulp unit"
   },
+
   "jest": {
     "scriptPreprocessor": "./preprocessor.js",
     "unmockedModulePathPatterns": [
@@ -15,19 +16,40 @@
       "jsx"
     ]
   },
+
+  "browserify": {
+    "transform": [
+      [
+        "hbsfy",
+        {
+          "extensions": [
+            "hbs"
+          ]
+        }
+      ]
+    ]
+  },
+
   "devDependencies": {
+    "backbone": "^1.2.1",
     "browserify": "^11.0.0",
+    "browserify-shim": "^3.8.10",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-jshint": "~1.6.2",
     "gulp-react": "^3.0.1",
+    "handlebars": "^3.0.3",
     "harmonize": "^1.4.4",
+    "hbsfy": "^2.2.1",
+    "jasmine-jquery": "^2.1.0",
     "jest-cli": "^0.4.15",
+    "jquery": "^2.1.4",
     "jshint-stylish": "~0.2.0",
     "karma": "~0.12.16",
+    "karma-browserify": "^4.3.0",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
-    "lodash": "~2.4.1",
+    "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-tools": "^0.13.3",
     "reactify": "^1.1.1",

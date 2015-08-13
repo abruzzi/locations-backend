@@ -46,6 +46,11 @@ class Locations < Sinatra::Base
       File.open('react.html').read
     end
 
+    get '/backbone' do
+      content_type "text/html"
+      File.open('backbone.html').read
+    end
+
     get '/' do
       content_type "text/html"
       File.open('index.html').read

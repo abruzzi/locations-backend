@@ -1,0 +1,16 @@
+<div>
+    <h4>Search Results</h4>
+    <ul>
+      {{#each locations}}
+      <li>
+        <div class="place">
+          <h4>{{this.name}}</h4>
+          <p>
+            {{this.description}}
+          </p>
+          <button type="button" class="like">like</button>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+</div>
