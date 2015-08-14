@@ -25777,19 +25777,7 @@ var _ = require('lodash');
 
 module.exports = Backbone.Model.extend({
   defaults: {
-    locations: [],
-    liked: []
-  },
-
-  initialize: function(model) {
-    this.bind('change:locations', this.rehash);
-  },
-
-  rehash: function() {
-    var locations = this.get('locations');
-    this.set('locations', _.map(locations, function(item) {
-        return _.extend(item, {id: _.uniqueId('loc_'), state: false});
-    }));
+    locations: []
   }
 });
 
@@ -25828,7 +25816,7 @@ module.exports = HandlebarsCompiler.template({"1":function(depth0,helpers,partia
     + "\n          </p>\n          <button type=\"button\" class=\"like\" data-id=\""
     + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
     + "\">\n"
-    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.state : depth0),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.liked : depth0),{"name":"if","hash":{},"fn":this.program(2, data, 0),"inverse":this.program(4, data, 0),"data":data})) != null ? stack1 : "")
     + "          </button>\n        </div>\n      </li>\n";
 },"2":function(depth0,helpers,partials,data) {
     return "            unlike\n";
@@ -25852,21 +25840,24 @@ var template = require('../templates/liked-view.hbs');
 module.exports = Backbone.View.extend({
     initialize: function(model) {
       this.model = model;
-      this.model.bind('change:liked', _.bind(this.render, this));
+      this.model.bind('change:locations', _.bind(this.render, this));
     },
 
     render: function() {
-        var html = template(this.model.toJSON());
+      var collection = this.model.get('locations');
+      var locations = _.select(collection, {'liked': true});
+      var html = template({'liked': locations});
 
-        this.$el.html(html);
+      this.$el.html(html);
 
-        return this.$el;
+      return this.$el;
     }
 });
 
 },{"../templates/liked-view.hbs":16,"backbone":1,"jquery":12,"lodash":13}],20:[function(require,module,exports){
 var Backbone = require('backbone');
 var $ = require('jquery');
+var _ = require('lodash');
 
 var template = require('../templates/search-form-view.hbs');
 
@@ -25885,7 +25876,9 @@ module.exports = Backbone.View.extend({
         $.ajax({
           url: 'http://locations-backend.herokuapp.com/locations?location=' + location,
           success: function(results) {
-            self.model.set('locations', results);
+            self.model.set('locations', _.map(results, function(item) {
+                return _.extend(item, {id: _.uniqueId('loc_'), liked: false});
+            }));
           },
           error: function(error) {
             self.model.set('locations', []);
@@ -25902,7 +25895,7 @@ module.exports = Backbone.View.extend({
     }
 });
 
-},{"../templates/search-form-view.hbs":17,"backbone":1,"jquery":12}],21:[function(require,module,exports){
+},{"../templates/search-form-view.hbs":17,"backbone":1,"jquery":12,"lodash":13}],21:[function(require,module,exports){
 var Backbone = require('backbone');
 var _ = require('lodash');
 var $ = require('jquery');
@@ -25951,14 +25944,11 @@ module.exports = Backbone.View.extend({
 
       var id = $(event.currentTarget).data('id');
       var collection = this.model.get('locations');
+
       var current = _.first(_.where(collection, {'id': id}));
-      current.state = !current.state;
+      current.liked = !current.liked;
 
-      var liked = _.select(collection, {'state': true});
-      this.model.set('liked', liked);
-
-      console.log(this.model);
-      // this.model.trigger('change:liked', this.model);
+      this.model.trigger('change:locations');
     },
 
     render: function() {

@@ -23,9 +23,7 @@ module.exports = Backbone.View.extend({
       var current = _.first(_.where(collection, {'id': id}));
       current.liked = !current.liked;
 
-      var liked = _.select(collection, {'liked': true});
-
-      this.model.set('liked', liked);
+      this.model.trigger('change:locations');
     },
 
     render: function() {

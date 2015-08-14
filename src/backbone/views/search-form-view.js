@@ -1,5 +1,6 @@
 var Backbone = require('backbone');
 var $ = require('jquery');
+var _ = require('lodash');
 
 var template = require('../templates/search-form-view.hbs');
 
@@ -18,7 +19,9 @@ module.exports = Backbone.View.extend({
         $.ajax({
           url: 'http://locations-backend.herokuapp.com/locations?location=' + location,
           success: function(results) {
-            self.model.set('locations', results);
+            self.model.set('locations', _.map(results, function(item) {
+                return _.extend(item, {id: _.uniqueId('loc_'), liked: false});
+            }));
           },
           error: function(error) {
             self.model.set('locations', []);

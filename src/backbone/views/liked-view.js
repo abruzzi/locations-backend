@@ -7,14 +7,16 @@ var template = require('../templates/liked-view.hbs');
 module.exports = Backbone.View.extend({
     initialize: function(model) {
       this.model = model;
-      this.model.bind('change:liked', _.bind(this.render, this));
+      this.model.bind('change:locations', _.bind(this.render, this));
     },
 
     render: function() {
-        var html = template(this.model.toJSON());
+      var collection = this.model.get('locations');
+      var locations = _.select(collection, {'liked': true});
+      var html = template({'liked': locations});
 
-        this.$el.html(html);
+      this.$el.html(html);
 
-        return this.$el;
+      return this.$el;
     }
 });
