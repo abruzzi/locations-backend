@@ -88,9 +88,6 @@ describe("SearchResultView", function() {
 
       first  = html.find("li").first();
       expect($.trim(first.find(".like").text())).toEqual("unlike");
-
-      var liked =  _.select(model.get('locations'), {'liked': true})[0];
-      expect(liked).toBeDefined();
     });
   });
 

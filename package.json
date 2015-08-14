@@ -2,7 +2,6 @@
   "scripts": {
     "test": "gulp unit"
   },
-
   "jest": {
     "scriptPreprocessor": "./preprocessor.js",
     "unmockedModulePathPatterns": [
@@ -16,7 +15,6 @@
       "jsx"
     ]
   },
-
   "browserify": {
     "transform": [
       [
@@ -29,7 +27,6 @@
       ]
     ]
   },
-
   "devDependencies": {
     "backbone": "^1.2.1",
     "browserify": "^11.0.0",
@@ -41,6 +38,7 @@
     "handlebars": "^3.0.3",
     "harmonize": "^1.4.4",
     "hbsfy": "^2.2.1",
+    "istanbulify": "^0.1.0",
     "jasmine-jquery": "^2.1.0",
     "jest-cli": "^0.4.15",
     "jquery": "^2.1.4",
@@ -48,6 +46,7 @@
     "karma": "~0.12.16",
     "karma-browserify": "^4.3.0",
     "karma-chrome-launcher": "~0.1.4",
+    "karma-coverage": "^0.5.0",
     "karma-jasmine": "~0.1.5",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
