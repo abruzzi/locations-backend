@@ -14,7 +14,7 @@ module.exports = Backbone.Model.extend({
   rehash: function() {
     var locations = this.get('locations');
     this.set('locations', _.map(locations, function(item) {
-        return _.extend(item, {id: _.uniqueId('loc_'), state: false});
+        return _.extend(item, {id: _.uniqueId('loc_'), liked: false});
     }));
   }
 });

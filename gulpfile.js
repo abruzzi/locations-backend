@@ -62,7 +62,7 @@ func(conf);
 funcbb(confbb);
 
 gulp.task('bbunit', function(done) {
-  karma.start(_.assign({}, confbb, {singleRun: true, logLevel: 'INFO'}), done);
+  karma.start(_.assign({}, confbb, {singleRun: false, logLevel: 'INFO'}), done);
 });
 
 gulp.task('ci', function(done) {

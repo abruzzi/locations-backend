@@ -21,7 +21,7 @@ describe("SearchResultView", function() {
        }
      });
   });
-  
+
   it("#initialize", function() {
     var model = new Backbone.Model([]);
     var view = new SearchResultView(model);
@@ -30,7 +30,7 @@ describe("SearchResultView", function() {
 
   describe("#render", function() {
     var locations = [
-      {"name": "Melbourne", "description": "Melbourne"}
+      {"id": 1, "name": "Melbourne", "description": "Melbourne", "liked": false}
     ];
 
     it("render an empty list", function() {

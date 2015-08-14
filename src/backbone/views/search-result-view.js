@@ -19,11 +19,12 @@ module.exports = Backbone.View.extend({
 
       var id = $(event.currentTarget).data('id');
       var collection = this.model.get('locations');
-      
-      var current = _.first(_.where(collection, {'id': id}));
-      current.state = !current.state;
 
-      var liked = _.select(collection, {'state': true});
+      var current = _.first(_.where(collection, {'id': id}));
+      current.liked = !current.liked;
+
+      var liked = _.select(collection, {'liked': true});
+
       this.model.set('liked', liked);
     },
 
