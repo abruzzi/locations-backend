@@ -21,7 +21,7 @@ describe("LikedView", function() {
        }
      });
   });
-  
+
   it("#initialize", function() {
     var model = new Backbone.Model([]);
     var view = new LikedView(model);
@@ -30,11 +30,11 @@ describe("LikedView", function() {
 
   describe("#render", function() {
     var locations = [
-      {"name": "Melbourne", "description": "Melbourne"}
+      {"id": "loc_1", "name": "Melbourne", "description": "Melbourne", "liked": true}
     ];
 
     it("render an empty list", function() {
-      var model = new Backbone.Model({"liked": []});
+      var model = new Backbone.Model({"locations": []});
       var view = new LikedView(model);
 
       var html = view.render();
@@ -43,10 +43,11 @@ describe("LikedView", function() {
     });
 
     it("render an non empty list", function() {
-      var model = new Backbone.Model({"liked": locations});
+      var model = new Backbone.Model({"locations": locations});
       var view = new LikedView(model);
 
       var html = view.render();
+
       expect(html.find("h4")).toContainText("Locations I liked");
       expect(html.find("ul li").length).toEqual(1);
 

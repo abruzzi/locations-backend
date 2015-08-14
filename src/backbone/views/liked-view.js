@@ -11,8 +11,7 @@ module.exports = Backbone.View.extend({
     },
 
     render: function() {
-      var collection = this.model.get('locations');
-      var locations = _.select(collection, {'liked': true});
+      var locations = _.select(this.model.get('locations'), {'liked': true});
       var html = template({'liked': locations});
 
       this.$el.html(html);
